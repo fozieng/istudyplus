@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" font-family="Inter, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" role="img" aria-labelledby="title desc">
+  <title id="title">How slow AI work runs without freezing the site</title>
+  <desc id="desc">A student action reaches the API, which queues a job in Redis and replies at once. A Celery worker takes a per-student lock in PostgreSQL, calls the AI provider under a time limit, and saves the result once. A refresh or reconnect shows the saved result without a new AI call.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#475569"/>
+    </marker>
+    <marker id="arrowGreen" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#16a34a"/>
+    </marker>
+  </defs>
+
+  <rect width="1200" height="630" fill="#ffffff"/>
+  <text x="40" y="50" font-size="24" font-weight="700" fill="#0f172a">How slow AI work runs without freezing the site</text>
+  <text x="40" y="78" font-size="14" fill="#475569">Making the answer and showing the answer are separate steps.</text>
+
+  <!-- Arrows -->
+  <g fill="none" stroke="#475569" stroke-width="2" marker-end="url(#arrow)">
+    <path d="M210 175 H250"/>
+    <path d="M440 175 H480"/>
+    <path d="M650 175 H690"/>
+    <path d="M890 175 H930"/>
+    <path d="M840 220 V320"/>
+    <path d="M740 220 V265 H565 V320"/>
+  </g>
+  <text x="852" y="276" font-size="12" font-weight="600" fill="#475569">takes lock</text>
+  <text x="652" y="257" font-size="12" font-weight="600" fill="#475569" text-anchor="middle">saves once</text>
+  <g fill="none" stroke="#16a34a" stroke-width="2" marker-end="url(#arrowGreen)">
+    <path d="M480 365 H440"/>
+    <path d="M250 365 H125 V220"/>
+  </g>
+  <text x="140" y="300" font-size="12" font-weight="600" fill="#15803d">instant</text>
+
+  <!-- Row 1 -->
+  <rect x="40" y="130" width="170" height="90" rx="14" fill="#ecfeff" stroke="#0891b2" stroke-width="2"/>
+  <text x="125" y="167" font-size="16" font-weight="700" fill="#0f172a" text-anchor="middle">Student taps</text>
+  <text x="125" y="191" font-size="12" fill="#475569" text-anchor="middle">e.g. asks the AI Teacher</text>
+
+  <rect x="250" y="130" width="190" height="90" rx="14" fill="#eef2ff" stroke="#6366f1" stroke-width="2"/>
+  <text x="345" y="167" font-size="16" font-weight="700" fill="#0f172a" text-anchor="middle">Django API</text>
+  <text x="345" y="191" font-size="12" fill="#475569" text-anchor="middle">queues the job, replies at once</text>
+
+  <path d="M480,140 A85,10 0 0 1 650,140 V210 A85,10 0 0 1 480,210 Z" fill="#f8fafc" stroke="#64748b" stroke-width="2"/>
+  <path d="M480,140 A85,10 0 0 0 650,140" fill="none" stroke="#64748b" stroke-width="2"/>
+  <text x="565" y="178" font-size="16" font-weight="700" fill="#0f172a" text-anchor="middle">Redis queue</text>
+  <text x="565" y="199" font-size="12" fill="#475569" text-anchor="middle">jobs wait here</text>
+
+  <rect x="690" y="130" width="200" height="90" rx="14" fill="#fff7ed" stroke="#ea580c" stroke-width="2"/>
+  <text x="790" y="167" font-size="16" font-weight="700" fill="#0f172a" text-anchor="middle">Celery worker</text>
+  <text x="790" y="191" font-size="12" fill="#475569" text-anchor="middle">a time limit on every job</text>
+
+  <rect x="930" y="130" width="230" height="90" rx="14" fill="#f5f3ff" stroke="#7c3aed" stroke-width="2"/>
+  <text x="1045" y="167" font-size="16" font-weight="700" fill="#0f172a" text-anchor="middle">AI provider</text>
+  <text x="1045" y="191" font-size="12" fill="#475569" text-anchor="middle">OpenAI · Anthropic</text>
+
+  <!-- Row 2 -->
+  <rect x="250" y="320" width="190" height="90" rx="14" fill="#f0fdf4" stroke="#16a34a" stroke-width="2"/>
+  <text x="345" y="355" font-size="15" font-weight="700" fill="#0f172a" text-anchor="middle">Refresh / reconnect</text>
+  <text x="345" y="378" font-size="12" fill="#475569" text-anchor="middle">shows the saved answer</text>
+  <text x="345" y="395" font-size="12" fill="#475569" text-anchor="middle">no new AI call</text>
+
+  <path d="M480,330 A85,10 0 0 1 650,330 V400 A85,10 0 0 1 480,400 Z" fill="#f8fafc" stroke="#64748b" stroke-width="2"/>
+  <path d="M480,330 A85,10 0 0 0 650,330" fill="none" stroke="#64748b" stroke-width="2"/>
+  <text x="565" y="368" font-size="16" font-weight="700" fill="#0f172a" text-anchor="middle">Saved result</text>
+  <text x="565" y="389" font-size="12" fill="#475569" text-anchor="middle">PostgreSQL</text>
+
+  <rect x="740" y="320" width="200" height="90" rx="14" fill="#f8fafc" stroke="#64748b" stroke-width="2"/>
+  <text x="840" y="355" font-size="15" font-weight="700" fill="#0f172a" text-anchor="middle">Lock in PostgreSQL</text>
+  <text x="840" y="378" font-size="12" fill="#475569" text-anchor="middle">one job per student</text>
+  <text x="840" y="395" font-size="12" fill="#475569" text-anchor="middle">survives restarts</text>
+
+  <!-- Outcomes -->
+  <g>
+    <rect x="40" y="470" width="350" height="120" rx="14" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+    <text x="64" y="506" font-size="16" font-weight="700" fill="#0f172a">Pages stay fast</text>
+    <text x="64" y="532" font-size="13" fill="#475569">The web request never waits for AI.</text>
+    <text x="64" y="552" font-size="13" fill="#475569">The student sees progress right away.</text>
+
+    <rect x="425" y="470" width="350" height="120" rx="14" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+    <text x="449" y="506" font-size="16" font-weight="700" fill="#0f172a">No duplicate AI costs</text>
+    <text x="449" y="532" font-size="13" fill="#475569">Double clicks and refreshes can't start</text>
+    <text x="449" y="552" font-size="13" fill="#475569">the same expensive job twice.</text>
+
+    <rect x="810" y="470" width="350" height="120" rx="14" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+    <text x="834" y="506" font-size="16" font-weight="700" fill="#0f172a">Safe on crash or redeploy</text>
+    <text x="834" y="532" font-size="13" fill="#475569">Locks live in the database, and the</text>
+    <text x="834" y="552" font-size="13" fill="#475569">scheduler is one separate process.</text>
+  </g>
+</svg>

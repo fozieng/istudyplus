@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" font-family="Inter, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" role="img" aria-labelledby="title desc">
+  <title id="title">How the adaptive engine learns</title>
+  <desc id="desc">A loop: the student answers, the engine updates its adaptive ability estimate, it picks the next best question, and the student practises again. Every night, a background job recalibrates question difficulty from real answers.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#475569"/>
+    </marker>
+    <marker id="arrowOrange" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#ea580c"/>
+    </marker>
+  </defs>
+
+  <rect width="1200" height="630" fill="#ffffff"/>
+  <text x="40" y="50" font-size="24" font-weight="700" fill="#0f172a">How the adaptive engine learns</text>
+  <text x="40" y="78" font-size="14" fill="#475569">Every answer makes two things more accurate: the student's ability estimate and each question's difficulty.</text>
+
+  <!-- Loop arrows -->
+  <g fill="none" stroke="#475569" stroke-width="2" marker-end="url(#arrow)">
+    <path d="M740 158 Q 980 158 980 286"/>
+    <path d="M980 396 Q 980 543 744 543"/>
+    <path d="M460 543 Q 230 543 230 400"/>
+    <path d="M230 295 Q 230 158 456 158"/>
+  </g>
+  <g fill="none" stroke="#ea580c" stroke-width="2" stroke-dasharray="7 6" marker-end="url(#arrowOrange)">
+    <path d="M600 202 V286"/>
+    <path d="M600 404 V490"/>
+  </g>
+
+  <!-- 1 Student answers -->
+  <rect x="460" y="112" width="280" height="90" rx="14" fill="#ecfeff" stroke="#0891b2" stroke-width="2"/>
+  <text x="600" y="148" font-size="17" font-weight="700" fill="#0f172a" text-anchor="middle">1 · Student answers</text>
+  <text x="600" y="174" font-size="13" fill="#475569" text-anchor="middle">practice · diagnostic · mock exams</text>
+
+  <!-- 2 Ability estimate -->
+  <rect x="830" y="290" width="300" height="106" rx="14" fill="#eef2ff" stroke="#6366f1" stroke-width="2"/>
+  <text x="980" y="326" font-size="17" font-weight="700" fill="#0f172a" text-anchor="middle">2 · Ability estimate</text>
+  <text x="980" y="352" font-size="13" fill="#475569" text-anchor="middle">adaptive model, updated every answer</text>
+  <text x="980" y="372" font-size="13" fill="#475569" text-anchor="middle">a level + how sure the engine is</text>
+
+  <!-- 3 Next best question -->
+  <rect x="460" y="494" width="280" height="98" rx="14" fill="#eef2ff" stroke="#6366f1" stroke-width="2"/>
+  <text x="600" y="530" font-size="17" font-weight="700" fill="#0f172a" text-anchor="middle">3 · Next best question</text>
+  <text x="600" y="556" font-size="13" fill="#475569" text-anchor="middle">unsure → measure first</text>
+  <text x="600" y="575" font-size="13" fill="#475569" text-anchor="middle">sure → teach weak skills &amp; stretch</text>
+
+  <!-- 4 Practise again -->
+  <rect x="100" y="295" width="260" height="100" rx="14" fill="#f8fafc" stroke="#64748b" stroke-width="2"/>
+  <text x="230" y="333" font-size="17" font-weight="700" fill="#0f172a" text-anchor="middle">4 · Practise again</text>
+  <text x="230" y="359" font-size="13" fill="#475569" text-anchor="middle">a session built for</text>
+  <text x="230" y="378" font-size="13" fill="#475569" text-anchor="middle">this student, right now</text>
+
+  <!-- Center: nightly recalibration -->
+  <rect x="440" y="290" width="320" height="114" rx="14" fill="#fff7ed" stroke="#ea580c" stroke-width="2" stroke-dasharray="7 6"/>
+  <text x="600" y="326" font-size="16" font-weight="700" fill="#9a3412" text-anchor="middle">Nightly recalibration</text>
+  <text x="600" y="351" font-size="13" fill="#7c2d12" text-anchor="middle">a background job re-measures every</text>
+  <text x="600" y="370" font-size="13" fill="#7c2d12" text-anchor="middle">question's difficulty from real answers</text>
+  <text x="600" y="389" font-size="12" fill="#9a3412" text-anchor="middle">→ better picks tomorrow</text>
+
+  <!-- Footer -->
+  <text x="40" y="618" font-size="12" fill="#64748b">Two exams (English &amp; Hebrew), one engine · Ability is tracked separately for each exam · The maths is pure functions, easy to test</text>
+</svg>
