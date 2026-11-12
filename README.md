@@ -1,25 +1,10 @@
 # iStudy+
 
-<!--
-  PLACEHOLDER: product GIF
-  Record it using docs/media-plan.md, save it as docs/images/demo.gif, then replace this comment with:
-  ![iStudy+ demo](docs/images/demo.gif)
--->
-
 ### 🎬 1-minute intro video
 
-<a href="Fozi-recruiter-video-v2.mp4"><img src="docs/images/video-thumbnail.jpg" alt="Watch the 1-minute iStudy+ intro video" width="480"></a>
+<a href="How I built it.mp4"><img src="docs/images/video-thumbnail.jpg" alt="Watch the 1-minute iStudy+ intro video" width="480"></a>
 
 *Click the image to watch the video.*
-
-<!--
-  To make the video play INSIDE this page on GitHub:
-  1. Open this README on github.com and click the pencil (Edit) icon.
-  2. Drag Fozi-recruiter-video-v2.mp4 from your computer into the editor, on this line.
-  3. GitHub uploads it and inserts a link like https://github.com/user-attachments/assets/...
-  4. Delete the thumbnail lines above (or keep them under the player) and commit.
-  (Files must be under 10 MB on a free plan. This one is about 8 MB.)
--->
 
 
 **Live site:** [istudy-plus.com](https://istudy-plus.com)
